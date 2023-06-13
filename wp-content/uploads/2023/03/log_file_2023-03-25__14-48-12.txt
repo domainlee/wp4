@@ -1,0 +1,33 @@
+
+---Downloaded files---
+The import files for: Ambrox Demo were successfully downloaded!
+Initial max execution time = 1500
+Files info:
+Site URL = https://validthemes.tech/themeforest/wordpress/test
+Data file = /home/valifzxf/public_html/themeforest/wordpress/test/wp-content/themes/ambrox/inc/demo-data/ambrox-demo.xml
+Widget file = /home/valifzxf/public_html/themeforest/wordpress/test/wp-content/themes/ambrox/inc/demo-data/ambrox-widgets-demo.json
+Customizer file = not defined!
+Redux files:
+ambrox_opt -> /home/valifzxf/public_html/themeforest/wordpress/test/wp-content/themes/ambrox/inc/demo-data/redux_options_demo.json 
+
+
+---Importing widgets---
+Blog Sidebar : 
+
+Block - No Title - Imported
+Block - No Title - Imported
+Ambrox :: Recent Posts - Recent Posts - Imported
+Block - No Title - Imported
+
+Page Sidebar : 
+
+Block - No Title - Widget already exists
+Block - No Title - Widget already exists
+
+
+
+---Importing Redux settings---
+Redux settings import for: ambrox_opt finished successfully!
+
+---ocdi/after_import---
+
