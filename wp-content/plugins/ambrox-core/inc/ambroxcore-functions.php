@@ -16,7 +16,7 @@
  * Admin Custom Login Logo
  */
 function ambrox_custom_login_logo() {
-  $logo = ! empty( ambrox_opt( 'ambrox_admin_login_logo', 'url' ) ) ? ambrox_opt( 'ambrox_admin_login_logo', 'url' ) : '' ;
+  $logo = ! empty( crtheme_opt( 'ambrox_admin_login_logo', 'url' ) ) ? crtheme_opt( 'ambrox_admin_login_logo', 'url' ) : '' ;
   if( isset( $logo ) && !empty( $logo ) )
       echo '<style type="text/css">body.login div#login h1 a { background-image:url('.esc_url( $logo ).'); }</style>';
 }
@@ -29,7 +29,7 @@ add_action( 'login_enqueue_scripts', 'ambrox_custom_login_logo' );
 add_action( 'admin_enqueue_scripts', 'ambrox_admin_styles' );
 
 function ambrox_admin_styles() {
-  // $ambrox_admin_custom_css = ! empty( ambrox_opt( 'ambrox_theme_admin_custom_css' ) ) ? ambrox_opt( 'ambrox_theme_admin_custom_css' ) : '';
+  // $ambrox_admin_custom_css = ! empty( crtheme_opt( 'ambrox_theme_admin_custom_css' ) ) ? crtheme_opt( 'ambrox_theme_admin_custom_css' ) : '';
   if ( ! empty( $ambrox_admin_custom_css ) ) {
       $ambrox_admin_custom_css = str_replace(array("\r\n", "\r", "\n", "\t", '    '), '', $ambrox_admin_custom_css);
       echo '<style rel="stylesheet" id="ambrox-admin-custom-css" >';

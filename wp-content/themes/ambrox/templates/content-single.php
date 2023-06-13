@@ -17,7 +17,7 @@
         <div class="blog-item-box">
         <?php
             if( class_exists('ReduxFramework') ) {
-                $ambrox_post_details_title_position = ambrox_opt('ambrox_post_details_title_position');
+                $ambrox_post_details_title_position = crtheme_opt('ambrox_post_details_title_position');
             } else {
                 $ambrox_post_details_title_position = 'header';
             }
@@ -70,8 +70,8 @@
 
     $ambrox_post_tag = get_the_tags();
     if( class_exists('ReduxFramework') ) {
-        $ambrox_post_details_share_options = ambrox_opt('ambrox_post_details_share_options');
-        $ambrox_show_post_tag = ambrox_opt( 'ambrox_display_post_tags' );
+        $ambrox_post_details_share_options = crtheme_opt('ambrox_post_details_share_options');
+        $ambrox_show_post_tag = crtheme_opt( 'ambrox_display_post_tags' );
     } else {
         $ambrox_show_post_tag = true;
         $ambrox_post_details_share_options = false;

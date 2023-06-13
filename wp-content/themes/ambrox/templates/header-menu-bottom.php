@@ -56,8 +56,8 @@
                             if( defined('CMB2_LOADED') || class_exists('ReduxFramework') ) {
                                 if( ambrox_meta('page_breadcrumb_settings') == 'page' ) {
                                     $ambrox_page_title_switcher = ambrox_meta('page_title');
-                                } elseif( ambrox_opt('ambrox_page_title_switcher') == true ) {
-                                    $ambrox_page_title_switcher = ambrox_opt('ambrox_page_title_switcher');
+                                } elseif( crtheme_opt('ambrox_page_title_switcher') == true ) {
+                                    $ambrox_page_title_switcher = crtheme_opt('ambrox_page_title_switcher');
                                 }else{
                                     $ambrox_page_title_switcher = '1';
                                 }
@@ -67,7 +67,7 @@
 
                             if( $ambrox_page_title_switcher == '1' ){
                                 if( class_exists( 'ReduxFramework' ) ){
-                                    $ambrox_page_title_tag    = ambrox_opt('ambrox_page_title_tag');
+                                    $ambrox_page_title_tag    = crtheme_opt('ambrox_page_title_tag');
                                 }else{
                                     $ambrox_page_title_tag    = 'h1';
                                 }
@@ -106,7 +106,7 @@
                                 if( ambrox_meta('page_breadcrumb_settings') == 'page' ) {
                                     $ambrox_breadcrumb_switcher = ambrox_meta('page_breadcrumb_trigger');
                                 } else {
-                                    $ambrox_breadcrumb_switcher = ambrox_opt('ambrox_enable_breadcrumb');
+                                    $ambrox_breadcrumb_switcher = crtheme_opt('ambrox_enable_breadcrumb');
                                 }
 
                             } else {
@@ -136,14 +136,14 @@
                 echo '<div class="row">';
                     echo '<div class="col-lg-12 col-md-12">';
                         if( class_exists( 'ReduxFramework' )  ){
-                            $ambrox_page_title_switcher  = ambrox_opt('ambrox_page_title_switcher');
+                            $ambrox_page_title_switcher  = crtheme_opt('ambrox_page_title_switcher');
                         }else{
                             $ambrox_page_title_switcher = '1';
                         }
 
                         if( $ambrox_page_title_switcher ){
                             if( class_exists( 'ReduxFramework' ) ){
-                                $ambrox_page_title_tag    = ambrox_opt('ambrox_page_title_tag');
+                                $ambrox_page_title_tag    = crtheme_opt('ambrox_page_title_tag');
                             }else{
                                 $ambrox_page_title_tag    = 'h1';
                             }
@@ -156,9 +156,9 @@
                                     )
                                 );
                             }elseif ( is_home() ){
-                                $ambrox_blog_page_title_setting = ambrox_opt('ambrox_blog_page_title_setting');
-                                $ambrox_blog_page_title_switcher = ambrox_opt('ambrox_blog_page_title_switcher');
-                                $ambrox_blog_page_custom_title = ambrox_opt('ambrox_blog_page_custom_title');
+                                $ambrox_blog_page_title_setting = crtheme_opt('ambrox_blog_page_title_setting');
+                                $ambrox_blog_page_title_switcher = crtheme_opt('ambrox_blog_page_title_switcher');
+                                $ambrox_blog_page_custom_title = crtheme_opt('ambrox_blog_page_custom_title');
                                 if( class_exists('ReduxFramework') ){
                                     if( $ambrox_blog_page_title_switcher ){
                                         echo ambrox_heading_tag(
@@ -195,7 +195,7 @@
                                     )
                                 );
                             }else{
-                                $posttitle_position  = ambrox_opt('ambrox_post_details_title_position');
+                                $posttitle_position  = crtheme_opt('ambrox_post_details_title_position');
                                 $postTitlePos = false;
                                 if( is_single() ){
                                     if( class_exists( 'ReduxFramework' ) ){
@@ -216,7 +216,7 @@
                                     );
                                 } else {
                                     if( class_exists( 'ReduxFramework' ) ){
-                                        $ambrox_post_details_custom_title  = ambrox_opt('ambrox_post_details_custom_title');
+                                        $ambrox_post_details_custom_title  = crtheme_opt('ambrox_post_details_custom_title');
                                     }else{
                                         $ambrox_post_details_custom_title = __( 'Blog Details','ambrox' );
                                     }
@@ -234,7 +234,7 @@
                             }
                         }
                         if( class_exists('ReduxFramework') ) {
-                            $ambrox_breadcrumb_switcher = ambrox_opt( 'ambrox_enable_breadcrumb' );
+                            $ambrox_breadcrumb_switcher = crtheme_opt( 'ambrox_enable_breadcrumb' );
                         } else {
                             $ambrox_breadcrumb_switcher = '1';
                         }

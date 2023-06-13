@@ -13,10 +13,10 @@
     }
 
     if( class_exists( 'ReduxFramework' ) ) {
-        $ambrox404title        = ambrox_opt( 'ambrox_fof_title' );
-        $ambrox404subtitle     = ambrox_opt( 'ambrox_fof_subtitle' );
-        $ambrox404description  = ambrox_opt( 'ambrox_fof_description' );
-        $ambrox404btntext      = ambrox_opt( 'ambrox_fof_btn_text' );
+        $ambrox404title        = crtheme_opt( 'ambrox_fof_title' );
+        $ambrox404subtitle     = crtheme_opt( 'ambrox_fof_subtitle' );
+        $ambrox404description  = crtheme_opt( 'ambrox_fof_description' );
+        $ambrox404btntext      = crtheme_opt( 'ambrox_fof_btn_text' );
     } else {
         $ambrox404title        = __( '404', 'ambrox' );
         $ambrox404subtitle     = __( 'Oops! That page can’t be found', 'ambrox' );

@@ -33,8 +33,8 @@ add_action( 'wp_ajax_ambrox_subscribe_ajax', 'ambrox_subscribe_ajax' );
 add_action( 'wp_ajax_nopriv_ambrox_subscribe_ajax', 'ambrox_subscribe_ajax' );
 
 function ambrox_subscribe_ajax( ){
-  $apiKey = ambrox_opt('ambrox_subscribe_apikey');
-  $listid = ambrox_opt('ambrox_subscribe_listid');
+  $apiKey = crtheme_opt('ambrox_subscribe_apikey');
+  $listid = crtheme_opt('ambrox_subscribe_listid');
    if( ! wp_verify_nonce($_POST['security'], 'ambrox-nonce') ) {
     echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('You are not allowed.', 'ambrox').'</div>';
    }else{

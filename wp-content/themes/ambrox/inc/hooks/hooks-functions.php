@@ -16,14 +16,14 @@
     // preloader hook function
     if( ! function_exists( 'ambrox_preloader_wrap_cb' ) ) {
         function ambrox_preloader_wrap_cb() {
-            $preloader_display  =  ambrox_opt('ambrox_display_preloader');
+            $preloader_display  =  crtheme_opt('ambrox_display_preloader');
 
             if( class_exists('ReduxFramework') ){
                 if( $preloader_display ){
                     
-                    if( ! empty( ambrox_opt( 'ambrox_preloader_text' ) ) ){
+                    if( ! empty( crtheme_opt( 'ambrox_preloader_text' ) ) ){
 
-                        $str = ambrox_opt( 'ambrox_preloader_text' );
+                        $str = crtheme_opt( 'ambrox_preloader_text' );
                         $chars = str_split($str);
                         echo '<div id="preloader">';
                             echo '<div id="ambrox-preloader" class="ambrox-preloader">';
@@ -84,8 +84,8 @@
     if( !function_exists('ambrox_blog_col_start_wrap_cb') ) {
         function ambrox_blog_col_start_wrap_cb() {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_blog_sidebar = ambrox_opt('ambrox_blog_sidebar');
-                $ambrox_blog_grid = ambrox_opt('ambrox_blog_grid');
+                $ambrox_blog_sidebar = crtheme_opt('ambrox_blog_sidebar');
+                $ambrox_blog_grid = crtheme_opt('ambrox_blog_grid');
                 if( $ambrox_blog_sidebar == '2' && is_active_sidebar('ambrox-blog-sidebar') ) {
                     echo '<div class="blog-content col-lg-8 col-md-12 order-lg-last">';
                 } elseif( $ambrox_blog_sidebar == '3' && is_active_sidebar('ambrox-blog-sidebar') ) {
@@ -117,7 +117,7 @@
     if( !function_exists('ambrox_blog_sidebar_cb') ) {
         function ambrox_blog_sidebar_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_blog_sidebar = ambrox_opt('ambrox_blog_sidebar');
+                $ambrox_blog_sidebar = crtheme_opt('ambrox_blog_sidebar');
             } else {
                 $ambrox_blog_sidebar = 2;
             }
@@ -132,7 +132,7 @@
     if( !function_exists('ambrox_blog_details_sidebar_cb') ) {
         function ambrox_blog_details_sidebar_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_blog_single_sidebar = ambrox_opt('ambrox_blog_single_sidebar');
+                $ambrox_blog_single_sidebar = crtheme_opt('ambrox_blog_single_sidebar');
             } else {
                 $ambrox_blog_single_sidebar = 4;
             }
@@ -155,7 +155,7 @@
     if( !function_exists('ambrox_blog_content_cb') ) {
         function ambrox_blog_content_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_blog_grid = ambrox_opt('ambrox_blog_grid');
+                $ambrox_blog_grid = crtheme_opt('ambrox_blog_grid');
             } else {
                 $ambrox_blog_grid = '1';
             }
@@ -234,10 +234,10 @@
                             echo '</footer>';
                         } else {
                             // global options
-                            $ambrox_footer_builder_trigger = ambrox_opt('ambrox_footer_builder_trigger');
+                            $ambrox_footer_builder_trigger = crtheme_opt('ambrox_footer_builder_trigger');
                             if( $ambrox_footer_builder_trigger == 'footer_builder' ) {
                                 echo '<footer>';
-                                $ambrox_global_footer_select = get_post( ambrox_opt( 'ambrox_footer_builder_select' ) );
+                                $ambrox_global_footer_select = get_post( crtheme_opt( 'ambrox_footer_builder_select' ) );
                                 $footer_post = get_post( $ambrox_global_footer_select );
                                 echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $footer_post->ID );
                                 echo '</footer>';
@@ -249,10 +249,10 @@
                     }
                 } else {
                     // global options
-                    $ambrox_footer_builder_trigger = ambrox_opt('ambrox_footer_builder_trigger');
+                    $ambrox_footer_builder_trigger = crtheme_opt('ambrox_footer_builder_trigger');
                     if( $ambrox_footer_builder_trigger == 'footer_builder' ) {
                         echo '<footer>';
-                        $ambrox_global_footer_select = get_post( ambrox_opt( 'ambrox_footer_builder_select' ) );
+                        $ambrox_global_footer_select = get_post( crtheme_opt( 'ambrox_footer_builder_select' ) );
                         $footer_post = get_post( $ambrox_global_footer_select );
                         echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $footer_post->ID );
                         echo '</footer>';
@@ -286,7 +286,7 @@
     if( !function_exists('ambrox_blog_details_col_start_cb') ) {
         function ambrox_blog_details_col_start_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_blog_single_sidebar = ambrox_opt('ambrox_blog_single_sidebar');
+                $ambrox_blog_single_sidebar = crtheme_opt('ambrox_blog_single_sidebar');
                 if( $ambrox_blog_single_sidebar == '2' && is_active_sidebar('ambrox-blog-sidebar') ) {
                     echo '<div class="blog-content col-lg-8 col-md-12 order-last">';
                 } elseif( $ambrox_blog_single_sidebar == '3' && is_active_sidebar('ambrox-blog-sidebar') ) {
@@ -309,9 +309,9 @@
     if( !function_exists('ambrox_blog_post_meta_cb') ) {
         function ambrox_blog_post_meta_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_display_post_date      =  ambrox_opt('ambrox_display_post_date');
-                $ambrox_display_post_admin     =  ambrox_opt('ambrox_display_admin');
-                $ambrox_display_post_views     =  ambrox_opt('ambrox_display_post_views');
+                $ambrox_display_post_date      =  crtheme_opt('ambrox_display_post_date');
+                $ambrox_display_post_admin     =  crtheme_opt('ambrox_display_admin');
+                $ambrox_display_post_views     =  crtheme_opt('ambrox_display_post_views');
 
             } else {
                 $ambrox_display_post_date      = '1';
@@ -352,7 +352,7 @@
     if( !function_exists( 'ambrox_blog_details_post_navigation_cb' ) ) {
         function ambrox_blog_details_post_navigation_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_post_details_post_navigation = ambrox_opt('ambrox_post_details_post_navigation');
+                $ambrox_post_details_post_navigation = crtheme_opt('ambrox_post_details_post_navigation');
             } else {
                 $ambrox_post_details_post_navigation = true;
             }
@@ -397,7 +397,7 @@
     if( !function_exists('ambrox_blog_details_share_options_cb') ) {
         function ambrox_blog_details_share_options_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_post_details_share_options = ambrox_opt('ambrox_post_details_share_options');
+                $ambrox_post_details_share_options = crtheme_opt('ambrox_post_details_share_options');
             } else {
                 $ambrox_post_details_share_options = false;
             }
@@ -417,7 +417,7 @@
     if( !function_exists('ambrox_blog_details_author_bio_cb') ) {
         function ambrox_blog_details_author_bio_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $postauthorbox =  ambrox_opt( 'ambrox_post_details_author_desc_trigger' );
+                $postauthorbox =  crtheme_opt( 'ambrox_post_details_author_desc_trigger' );
             } else {
                 $postauthorbox = '1';
             }
@@ -511,7 +511,7 @@
     if( !function_exists('ambrox_page_col_start_wrap_cb') ) {
         function ambrox_page_col_start_wrap_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_page_sidebar = ambrox_opt('ambrox_page_sidebar');
+                $ambrox_page_sidebar = crtheme_opt('ambrox_page_sidebar');
             }else {
                 $ambrox_page_sidebar = '1';
             }
@@ -537,13 +537,13 @@
     if( !function_exists('ambrox_page_sidebar_cb') ) {
         function ambrox_page_sidebar_cb( ) {
             if( class_exists('ReduxFramework') ) {
-                $ambrox_page_sidebar = ambrox_opt('ambrox_page_sidebar');
+                $ambrox_page_sidebar = crtheme_opt('ambrox_page_sidebar');
             }else {
                 $ambrox_page_sidebar = '1';
             }
 
             if( class_exists('ReduxFramework') ) {
-                $ambrox_page_layoutopt = ambrox_opt('ambrox_page_layoutopt');
+                $ambrox_page_layoutopt = crtheme_opt('ambrox_page_layoutopt');
             }else {
                 $ambrox_page_layoutopt = '3';
             }
@@ -679,7 +679,7 @@
     if( ! function_exists( 'ambrox_blog_postexcerpt_read_content_cb') ) {
         function ambrox_blog_postexcerpt_read_content_cb( ) {
             if( class_exists( 'ReduxFramework' ) ) {
-                $ambrox_excerpt_length = ambrox_opt('ambrox_blog_postExcerpt');
+                $ambrox_excerpt_length = crtheme_opt('ambrox_blog_postExcerpt');
             } else {
                 $ambrox_excerpt_length = '24';
             }
@@ -699,11 +699,11 @@
             );
 
             if( class_exists( 'ReduxFramework' ) ) {
-                $ambrox_blog_admin = ambrox_opt( 'ambrox_blog_post_author' );
+                $ambrox_blog_admin = crtheme_opt( 'ambrox_blog_post_author' );
 
-                $ambrox_blog_readmore_setting_val = ambrox_opt('ambrox_blog_readmore_setting');
+                $ambrox_blog_readmore_setting_val = crtheme_opt('ambrox_blog_readmore_setting');
                 if( $ambrox_blog_readmore_setting_val == 'custom' ) {
-                    $ambrox_blog_readmore_setting = ambrox_opt('ambrox_blog_custom_readmore');
+                    $ambrox_blog_readmore_setting = crtheme_opt('ambrox_blog_custom_readmore');
                 } else {
                     $ambrox_blog_readmore_setting = __( 'Read More', 'ambrox' );
                 }

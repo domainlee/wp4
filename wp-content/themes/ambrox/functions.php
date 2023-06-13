@@ -39,7 +39,7 @@ require_once CRTHEME_DIR_PATH_FRAM . 'crtheme-meta/crtheme-config.php';
 require_once CRTHEME_DIR_PATH_INC . 'crtheme-breadcrumbs.php';
 
 // sidebar register
-require_once CRTHEME_DIR_PATH_INC . 'ambrox-widgets-reg.php';
+require_once CRTHEME_DIR_PATH_INC . 'crtheme-widgets-reg.php';
 
 //essential functions
 require_once CRTHEME_DIR_PATH_INC . 'ambrox-functions.php';

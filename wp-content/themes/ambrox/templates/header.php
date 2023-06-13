@@ -36,10 +36,10 @@
                 }
             } else {
                 // global options
-                $ambrox_header_builder_trigger = ambrox_opt('ambrox_header_options');
+                $ambrox_header_builder_trigger = crtheme_opt('ambrox_header_options');
                 if( $ambrox_header_builder_trigger == '2' ) {
                     echo '<header>';
-                    $ambrox_global_header_select = get_post( ambrox_opt( 'ambrox_header_select_options' ) );
+                    $ambrox_global_header_select = get_post( crtheme_opt( 'ambrox_header_select_options' ) );
                     $header_post = get_post( $ambrox_global_header_select );
                     echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $header_post->ID );
                     echo '</header>';
@@ -49,11 +49,11 @@
                 }
             }
         } else {
-            $ambrox_header_options = ambrox_opt('ambrox_header_options');
+            $ambrox_header_options = crtheme_opt('ambrox_header_options');
             if( $ambrox_header_options == '1' ) {
                 ambrox_global_header_option();
             } else {
-                $ambrox_header_select_options = ambrox_opt('ambrox_header_select_options');
+                $ambrox_header_select_options = crtheme_opt('ambrox_header_select_options');
                 $ambroxheader = get_post( $ambrox_header_select_options );
                 echo '<header>';
                     echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $ambroxheader->ID );

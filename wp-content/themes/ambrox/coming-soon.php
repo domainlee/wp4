@@ -13,9 +13,9 @@
     }
 
     if( class_exists( 'ReduxFramework' ) ) {
-        $ambroxcoming_soontitle     = ambrox_opt( 'ambrox_coming_soon_title' );
-        $ambroxcoming_soonsubtitle  = ambrox_opt( 'ambrox_coming_soon_subtitle' );
-        $ambroxcoming_soonbtntext   = ambrox_opt( 'ambrox_coming_soon_btn_text' );
+        $ambroxcoming_soontitle     = crtheme_opt( 'ambrox_coming_soon_title' );
+        $ambroxcoming_soonsubtitle  = crtheme_opt( 'ambrox_coming_soon_subtitle' );
+        $ambroxcoming_soonbtntext   = crtheme_opt( 'ambrox_coming_soon_btn_text' );
     } else {
         $ambroxcoming_soontitle     = __( 'Website Under Construction', 'ambrox' );
         $ambroxcoming_soonsubtitle  = __( 'Website Under Construction. Work Is Going On For The Website Please Stay With Us.', 'ambrox' );
@@ -29,10 +29,10 @@
     echo '<section class="vs-error-wrapper space">';
         echo '<div class="container">';
             echo '<div class="error-content text-center">';
-                if( ! empty( ambrox_opt( 'ambrox_coming_soon_image', 'url' ) ) ){
+                if( ! empty( crtheme_opt( 'ambrox_coming_soon_image', 'url' ) ) ){
                     echo '<div class="error-img">';
                         echo ambrox_img_tag( array(
-                            'url'   => esc_url( ambrox_opt( 'ambrox_coming_soon_image', 'url' ) ),
+                            'url'   => esc_url( crtheme_opt( 'ambrox_coming_soon_image', 'url' ) ),
                         ) );
                     echo '</div>';
                 }

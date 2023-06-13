@@ -15,7 +15,7 @@ if( ! defined( 'ABSPATH' ) ){
 }
 
  // theme option callback
-function ambrox_opt( $id = null, $url = null ){
+function crtheme_opt( $id = null, $url = null ){
     global $ambrox_opt;
 
     if( $id && $url ){
@@ -56,12 +56,12 @@ function ambrox_theme_logo() {
         $siteLogo .= '</a>';
 
         return $siteLogo;
-    } elseif( !ambrox_opt('ambrox_text_title') && ambrox_opt('ambrox_site_logo', 'url' )  ){
+    } elseif( !crtheme_opt('ambrox_text_title') && crtheme_opt('ambrox_site_logo', 'url' )  ){
 
-        $siteLogo = '<img class="logo" src="'.esc_url( ambrox_opt('ambrox_site_logo', 'url' ) ).'" alt="'.esc_attr( get_bloginfo('name') ).'" />';
+        $siteLogo = '<img class="logo" src="'.esc_url( crtheme_opt('ambrox_site_logo', 'url' ) ).'" alt="'.esc_attr( get_bloginfo('name') ).'" />';
         return '<a class="navbar-brand" href="'.esc_url( $siteUrl ).'">'.$siteLogo.'</a>';
-    }elseif( ambrox_opt('ambrox_text_title') ){
-        return '<h2 class="logo-text"><a class="logo" href="'.esc_url( $siteUrl ).'">'.wp_kses( ambrox_opt('ambrox_text_title'), $allowhtml ).'</a></h2>';
+    }elseif( crtheme_opt('ambrox_text_title') ){
+        return '<h2 class="logo-text"><a class="logo" href="'.esc_url( $siteUrl ).'">'.wp_kses( crtheme_opt('ambrox_text_title'), $allowhtml ).'</a></h2>';
     }else{
         return '<h2 class="logo-text"><a class="logo" href="'.esc_url( $siteUrl ).'">'.esc_html( get_bloginfo('name') ).'</a></h2>';
     }
@@ -91,12 +91,12 @@ function ambrox_mobile_theme_logo() {
         $siteLogo .= '</a>';
 
         return $siteLogo;
-    } elseif( !ambrox_opt('ambrox_text_title') && ambrox_opt('ambrox_site_logo', 'url' )  ){
+    } elseif( !crtheme_opt('ambrox_text_title') && crtheme_opt('ambrox_site_logo', 'url' )  ){
 
-        $siteLogo = '<img class="logo" src="'.esc_url( ambrox_opt('ambrox_site_logo', 'url' ) ).'" alt="'.esc_attr( get_bloginfo('name') ).'" />';
+        $siteLogo = '<img class="logo" src="'.esc_url( crtheme_opt('ambrox_site_logo', 'url' ) ).'" alt="'.esc_attr( get_bloginfo('name') ).'" />';
         return '<a class="mob-logo" href="'.esc_url( $siteUrl ).'">'.$siteLogo.'</a>';
-    }elseif( ambrox_opt('ambrox_text_title') ){
-        return '<h2 class="logo-text"><a class="logo" href="'.esc_url( $siteUrl ).'">'.wp_kses( ambrox_opt('ambrox_text_title'), $allowhtml ).'</a></h2>';
+    }elseif( crtheme_opt('ambrox_text_title') ){
+        return '<h2 class="logo-text"><a class="logo" href="'.esc_url( $siteUrl ).'">'.wp_kses( crtheme_opt('ambrox_text_title'), $allowhtml ).'</a></h2>';
     }else{
         return '<h2 class="logo-text"><a class="logo" href="'.esc_url( $siteUrl ).'">'.esc_html( get_bloginfo('name') ).'</a></h2>';
     }
@@ -253,7 +253,7 @@ function ambrox_comment_callback( $comment, $args, $depth ) {
 add_filter( 'body_class', 'ambrox_body_class' );
 function ambrox_body_class( $classes ) {
     if( class_exists('ReduxFramework') ) {
-        $ambrox_blog_single_sidebar = ambrox_opt('ambrox_blog_single_sidebar');
+        $ambrox_blog_single_sidebar = crtheme_opt('ambrox_blog_single_sidebar');
 
 
         if(is_active_sidebar('ambrox-blog-sidebar')){
@@ -301,7 +301,7 @@ function ambrox_footer_global_option(){
 
     // Ambrox Footer Bottom Enable Disable
     if( class_exists( 'ReduxFramework' ) ){
-        $ambrox_footer_bottom_active = ambrox_opt( 'ambrox_disable_footer_bottom' );
+        $ambrox_footer_bottom_active = crtheme_opt( 'ambrox_disable_footer_bottom' );
     }else{
         $ambrox_footer_bottom_active = '1';
     }
@@ -344,7 +344,7 @@ function ambrox_footer_global_option(){
             echo '</div>';
         }
         if( $ambrox_footer_bottom_active == '1' ){
-            if( ! empty( ambrox_opt( 'ambrox_copyright_text' ) ) ){
+            if( ! empty( crtheme_opt( 'ambrox_copyright_text' ) ) ){
                 echo '<!-- Start Footer Bottom -->';
                 echo '<div class="footer-bottom">';
                     echo '<div class="container">';
@@ -357,7 +357,7 @@ function ambrox_footer_global_option(){
                                 $allign_class = 'text-center';
                             }
                             echo '<div class="col-lg-'.esc_attr($col_class).'">';
-                                echo '<p class="'.esc_attr($allign_class).'">'.wp_kses( ambrox_opt( 'ambrox_copyright_text' ), $allowhtml ).'</p>';
+                                echo '<p class="'.esc_attr($allign_class).'">'.wp_kses( crtheme_opt( 'ambrox_copyright_text' ), $allowhtml ).'</p>';
                             echo '</div>';
                             if( has_nav_menu( 'footer-menu' ) ){
                                 echo '<div class="col-lg-6 text-end link">';
@@ -377,7 +377,7 @@ function ambrox_footer_global_option(){
 }
 
 function ambrox_social_icon(){
-    $ambrox_social_icon = ambrox_opt( 'ambrox_social_links' );
+    $ambrox_social_icon = crtheme_opt( 'ambrox_social_links' );
     if( ! empty( $ambrox_social_icon ) && isset( $ambrox_social_icon ) ){
         foreach( $ambrox_social_icon as $social_icon ){
             if( ! empty( $social_icon['title'] ) ){
@@ -392,8 +392,8 @@ function ambrox_global_header_option() {
 
     echo '<header>';
         if( class_exists( 'ReduxFramework' ) ){
-            $ambrox_btn      = ambrox_opt( 'ambrox_btn_text' );
-            $ambrox_btn_url  = ambrox_opt( 'ambrox_btn_url' );
+            $ambrox_btn      = crtheme_opt( 'ambrox_btn_text' );
+            $ambrox_btn_url  = crtheme_opt( 'ambrox_btn_url' );
         }else{
             $ambrox_btn      = '';
             $ambrox_btn_url  = '';
@@ -430,7 +430,7 @@ function ambrox_global_header_option() {
                 echo '</div><!-- /.navbar-collapse -->';
                 if( $ambrox_btn ){
                     echo '<div class="attr-right">';
-                       echo ' <!-- Start Atribute Navigation --><div class="attr-nav"><ul><li class="button"><a href="'.esc_url(ambrox_opt( 'ambrox_btn_url' )).'">'.esc_html(ambrox_opt( 'ambrox_btn_text' )).'</a></li></ul></div>';
+                       echo ' <!-- Start Atribute Navigation --><div class="attr-nav"><ul><li class="button"><a href="'.esc_url(crtheme_opt( 'ambrox_btn_url' )).'">'.esc_html(crtheme_opt( 'ambrox_btn_text' )).'</a></li></ul></div>';
                     echo '</div>';
                         echo '<!-- End Atribute Navigation -->';
                 }
@@ -510,7 +510,7 @@ function ambrox_archive_count_span( $links ) {
 if( ! function_exists( 'ambrox_blog_category' ) ){
     function ambrox_blog_category(){
         if( class_exists( 'ReduxFramework' ) ){
-            $ambrox_display_post_category =  ambrox_opt('ambrox_display_post_category');
+            $ambrox_display_post_category =  crtheme_opt('ambrox_display_post_category');
         }else{
             $ambrox_display_post_category = '1';
         }
@@ -518,7 +518,7 @@ if( ! function_exists( 'ambrox_blog_category' ) ){
         if( $ambrox_display_post_category ){
             $ambrox_post_categories = get_the_category();
             if( is_array( $ambrox_post_categories ) && ! empty( $ambrox_post_categories ) ){
-                if( ambrox_opt( 'ambrox_blog_style' ) == '2' ){
+                if( crtheme_opt( 'ambrox_blog_style' ) == '2' ){
                     $padding_class = 'mb-20';
                 }else{
                     $padding_class = '';
@@ -551,7 +551,7 @@ add_filter('edit_comment_link', 'ambrox_custom_edit_comment_link', 99);
 function ambrox_post_classes( $classes, $class, $post_id ) {
     if ( get_post_type() === 'post' ) {
         if( ! is_single() ){
-            if( ambrox_opt( 'ambrox_blog_style' ) == '3' ){
+            if( crtheme_opt( 'ambrox_blog_style' ) == '3' ){
                 $classes[] = "item grid-wide";
             }else{
                 $classes[] = "single-item";

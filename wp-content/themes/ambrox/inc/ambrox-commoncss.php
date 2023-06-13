@@ -15,8 +15,8 @@ if( !defined( 'ABSPATH' ) ){
 function ambrox_common_custom_css(){
 	wp_enqueue_style( 'ambrox-color-schemes', get_template_directory_uri().'/assets/css/color.schemes.css' );
 
-    $CustomCssOpt  = ambrox_opt( 'ambrox_css_editor' );
-    $preloader_display  =  ambrox_opt('ambrox_display_preloader');
+    $CustomCssOpt  = crtheme_opt( 'ambrox_css_editor' );
+    $preloader_display  =  crtheme_opt('ambrox_display_preloader');
 	if( $CustomCssOpt ){
 		$CustomCssOpt = $CustomCssOpt;
 	}else{
@@ -59,8 +59,8 @@ function ambrox_common_custom_css(){
     }
 
     if( !empty( $preloader_display ) ){
-        $ambrox_pre_img = ambrox_opt( 'ambrox_preloader_img','url' );
-        if( ! empty( ambrox_opt( 'ambrox_preloader_img','url' ) ) ){
+        $ambrox_pre_img = crtheme_opt( 'ambrox_preloader_img','url' );
+        if( ! empty( crtheme_opt( 'ambrox_preloader_img','url' ) ) ){
             $customcss .= ".se-pre-con{
                 background:url('{$ambrox_pre_img}')!important;
                 text-align: center;
@@ -85,7 +85,7 @@ function ambrox_common_custom_css(){
     }
     
 	// theme color
-	$ambroxthemecolor = ambrox_opt('ambrox_theme_color');
+	$ambroxthemecolor = crtheme_opt('ambrox_theme_color');
 
     list($r, $g, $b) = sscanf( $ambroxthemecolor, "#%02x%02x%02x");
 

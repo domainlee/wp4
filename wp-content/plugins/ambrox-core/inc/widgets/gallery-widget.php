@@ -45,7 +45,7 @@ class ambrox_gallery_widget extends WP_Widget {
                         echo esc_html( $title );
                     echo $args['after_title'];
                 }
-				$ambrox_gallery_image = ambrox_opt( 'ambrox_gallery_image_widget' );
+				$ambrox_gallery_image = crtheme_opt( 'ambrox_gallery_image_widget' );
 
 				if( !empty( $ambrox_gallery_image ) && isset( $ambrox_gallery_image ) ){
 					echo '<div class="widget-gallery">';
